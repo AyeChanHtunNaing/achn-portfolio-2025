@@ -199,7 +199,6 @@ const Resume = () => {
           <div className="inline-block px-4 py-1 border border-theme-skyBlue self-start">
             <span className="text-sm font-medium text-theme-skyBlue">Resume</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-theme-skyBlue to-theme-brightBlue">My Experience</h2>
         </div>
         
         <div className="space-y-16">
