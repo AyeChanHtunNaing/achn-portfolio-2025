@@ -43,7 +43,7 @@ const About = () => {
               <div className="relative overflow-hidden rounded-lg">
                 <div className="aspect-square bg-gray-100 overflow-hidden">
                   <img 
-                    src="https://scontent.fbkk12-1.fna.fbcdn.net/v/t39.30808-6/495373240_1831776434063540_1031443011526066511_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGUqievIBUFKPTkxHuSvnOVrst0QTHxfkuuy3RBMfF-S-10ly9EUihdFqEXM0MbFqP4ckTKX5ZlX9ysLjMJJypm&_nc_ohc=lZRSfZSqtCAQ7kNvwE8kW6m&_nc_oc=Admad0tbO2Npgmn8jJXzN6A_B1cAw0H5M1lh6ouR01FMsEdvQGvoUk8wjMU_tFujRGs&_nc_zt=23&_nc_ht=scontent.fbkk12-1.fna&_nc_gid=zyy2B_wb-nrQCrnTEwTFsg&oh=00_AfKTVw-VHI1_OV03SOZo8FCH0GiyVIVwkdgLVdr8nAxaww&oe=682FEFC3"
+                    src="https://scontent.fbkk8-2.fna.fbcdn.net/v/t39.30808-6/480303843_1772773579963826_7005570644937049789_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeEO8GFpSF68qIE6rHigfScw-Dcd-8joGzf4Nx37yOgbN-IcpNagC9EultBiw4b8t9pmUTF3ouiwTv9yvFSB-G1m&_nc_ohc=iCe5KishiFsQ7kNvwFVKMoE&_nc_oc=AdltZrxq6wYHEnDefP1Fpq1s0cSODtwAOlpqtqwnxV9mv8spmdKyNYaZOY4BlAaBOII&_nc_zt=23&_nc_ht=scontent.fbkk8-2.fna&_nc_gid=WNobTAGZvZi9rQA63U8DLg&oh=00_AfIdT2b35xA1BWG2ne4d6w3lx0HN8611MRn7KDtsA9Hlhw&oe=682FD71A"
                     alt="Profile" 
                     className="w-full h-full object-cover hover:scale-105 transition-all duration-500"
                   />
