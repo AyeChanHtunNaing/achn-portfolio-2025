@@ -143,7 +143,7 @@ const Resume = () => {
       title: "Third Year (Computer Science)",
       organization: "University of Computer Studies, Yangon",
       period: "2020 - 2021",
-      description: "Drop off due to COVID-19 and current political situation in Myanmar \n" +
+      description: "Drop out due to COVID-19 and current political situation in Myanmar \n" +
           "Specialized in Software Engineering , Java Programming, Database Management Systems, Data Structure & Algorithms and Web Programming"
     }
   ];
