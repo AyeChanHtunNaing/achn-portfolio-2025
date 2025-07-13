@@ -43,7 +43,7 @@ const About = () => {
               <div className="relative overflow-hidden rounded-lg">
                 <div className="aspect-square bg-gray-100 overflow-hidden">
                   <img 
-                    src="https://scontent.fbkk8-2.fna.fbcdn.net/v/t39.30808-6/480303843_1772773579963826_7005570644937049789_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeEO8GFpSF68qIE6rHigfScw-Dcd-8joGzf4Nx37yOgbN-IcpNagC9EultBiw4b8t9pmUTF3ouiwTv9yvFSB-G1m&_nc_ohc=iCe5KishiFsQ7kNvwFVKMoE&_nc_oc=AdltZrxq6wYHEnDefP1Fpq1s0cSODtwAOlpqtqwnxV9mv8spmdKyNYaZOY4BlAaBOII&_nc_zt=23&_nc_ht=scontent.fbkk8-2.fna&_nc_gid=WNobTAGZvZi9rQA63U8DLg&oh=00_AfIdT2b35xA1BWG2ne4d6w3lx0HN8611MRn7KDtsA9Hlhw&oe=682FD71A"
+                    src="/profile.jpeg"
                     alt="Profile" 
                     className="w-full h-full object-cover hover:scale-105 transition-all duration-500"
                   />
@@ -72,7 +72,7 @@ const About = () => {
             <h4 className="text-lg text-gray-500 mb-6">Software Engineer</h4>
             
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Experienced software developer with over 4 years of project-based experience, known for a strong work ethic, attention to detail, and excellent communication skills. Passionate about leveraging technology to enhance living standards, dedicated to continuous learning and growth in software development.
+              Experienced software developer with over 4 years of project-based experience and a recent B.Sc. (Hons) Computing graduate from the University of Greenwich. Strong attention to detail, reliable communication skills, and a passion for using technology to solve real-world problems.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-10 mb-10 border-t border-b border-gray-100 py-8">
@@ -83,7 +83,7 @@ const About = () => {
                 </div>
                 <div className="transform transition-all duration-300 hover:translate-x-2">
                   <span className="text-xs text-gray-500 block mb-1">Email</span>
-                  <p className="font-medium">achn.peacechan@gmail.com</p>
+                  <p className="font-medium">achn@peacechan.dev</p>
                 </div>
                 <div className="transform transition-all duration-300 hover:translate-x-2">
                   <span className="text-xs text-gray-500 block mb-1">Location</span>
@@ -105,11 +105,17 @@ const About = () => {
                 </div>
               </div>
             </div>
-            
-            <Button className="h-auto py-3 px-6 bg-gradient-to-r from-theme-skyBlue to-theme-brightBlue text-white hover:from-theme-brightBlue hover:to-theme-skyBlue transition-all duration-500 rounded-md shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center gap-2">
-              <FileText className="w-4 h-4" />
-              Download Resume
-            </Button>
+
+            <a
+                href="https://flowcv.com/resume/8gtnjbl6b4"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+              <Button className="h-auto py-3 px-6 bg-gradient-to-r from-theme-skyBlue to-theme-brightBlue text-white hover:from-theme-brightBlue hover:to-theme-skyBlue transition-all duration-500 rounded-md shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center gap-2">
+                <FileText className="w-4 h-4" />
+                Download Resume
+              </Button>
+            </a>
           </div>
         </div>
       </div>

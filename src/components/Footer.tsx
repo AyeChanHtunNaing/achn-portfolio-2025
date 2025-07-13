@@ -5,7 +5,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#d0ecfd] text-gray-800 py-12">
+    <footer className="bg-theme-lightBlue text-gray-800 py-12">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
           <div className="mb-6 md:mb-0">
@@ -35,7 +35,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-300 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-xs text-gray-700 mb-4 md:mb-0">
-            © 2020 - {currentYear} Peace Chan . All rights reserved.
+            © 2019 - {currentYear} Peace Chan . All rights reserved.
           </p>
           
           <div>

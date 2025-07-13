@@ -43,7 +43,7 @@ const Contact = () => {
     
     try {
       // Create mailto URL
-      const mailtoUrl = `mailto:achn.peacechan@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`;
+      const mailtoUrl = `mailto:achn@peacechan.dev?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`;
       
       // Open email client
       window.location.href = mailtoUrl;
@@ -76,15 +76,15 @@ const Contact = () => {
     <section id="contact" className="py-24 bg-gray-50 relative overflow-hidden">
       {/* Abstract background elements */}
       <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-white to-transparent"></div>
-      <div className="absolute -top-10 -right-10 w-72 h-72 bg-theme-purple opacity-5 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-10 -left-10 w-80 h-80 bg-theme-blue opacity-5 rounded-full blur-3xl"></div>
+      <div className="absolute -top-10 -right-10 w-72 h-72 bg-theme-skyBlue opacity-5 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-10 -left-10 w-80 h-80 bg-theme-lightBlue opacity-5 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-4 max-w-5xl relative z-10">
         <div className={`mb-16 max-w-md text-center mx-auto transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <div className="inline-block mb-2 border-b-2 border-theme-purple">
+          <div className="inline-block mb-2 border-b-2 text-theme-skyBlue">
             <span className="text-xs font-medium uppercase tracking-wider">Contact</span>
           </div>
-          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-theme-purple to-theme-blue">Get In Touch</h2>
+          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-theme-lightBlue to-theme-blue">Get In Touch</h2>
           <p className="mt-4 text-gray-600">Feel free to reach out for collaborations or just a friendly hello!</p>
         </div>
         
@@ -192,7 +192,7 @@ const Contact = () => {
                 <div>
                   <Button 
                     type="submit"
-                    className="bg-[#d0ecfd] text-gray-800 hover:bg-[#a8dcfb] hover:text-white transition-all duration-500 rounded-md shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center gap-2 px-6 py-3 h-auto"
+                    className="border border-theme-skyBlue text-theme-skyBlue hover:bg-theme-skyBlue hover:text-white transition-colors px-6 py-2 shadow-md hover:shadow-lg transform hover:-translate-y-1"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? 'Sending...' : 'Send Message'}
