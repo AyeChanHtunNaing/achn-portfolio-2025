@@ -81,10 +81,10 @@ const Contact = () => {
       
       <div className="container mx-auto px-4 max-w-5xl relative z-10">
         <div className={`mb-16 max-w-md text-center mx-auto transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <div className="inline-block mb-2 border-b-2 text-theme-skyBlue">
+          <div className="inline-block mb-2 border-b-2 border-theme-skyBlue">
             <span className="text-xs font-medium uppercase tracking-wider">Contact</span>
           </div>
-          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-theme-lightBlue to-theme-blue">Get In Touch</h2>
+          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-theme-skyBlue to-theme-brightBlue">Get In Touch</h2>
           <p className="mt-4 text-gray-600">Feel free to reach out for collaborations or just a friendly hello!</p>
         </div>
         
@@ -99,7 +99,7 @@ const Contact = () => {
               
               <div className="space-y-8">
                 <div className="flex items-start gap-4 group hover:bg-gray-50 p-3 rounded-md transition-all duration-300 transform hover:translate-x-2">
-                  <div className="p-3 rounded-full bg-gray-100 group-hover:bg-theme-purple group-hover:text-white transition-all duration-300">
+                  <div className="p-3 rounded-full bg-gray-100 group-hover:bg-theme-skyBlue group-hover:text-white transition-all duration-300">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
@@ -109,17 +109,17 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-start gap-4 group hover:bg-gray-50 p-3 rounded-md transition-all duration-300 transform hover:translate-x-2">
-                  <div className="p-3 rounded-full bg-gray-100 group-hover:bg-theme-purple group-hover:text-white transition-all duration-300">
+                  <div className="p-3 rounded-full bg-gray-100 group-hover:bg-theme-skyBlue group-hover:text-white transition-all duration-300">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="font-medium text-sm mb-1">Email</h4>
-                    <p className="text-gray-500 text-sm">achn.peacechan@gmail.com</p>
+                    <p className="text-gray-500 text-sm">achn@peacechan.dev</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4 group hover:bg-gray-50 p-3 rounded-md transition-all duration-300 transform hover:translate-x-2">
-                  <div className="p-3 rounded-full bg-gray-100 group-hover:bg-theme-purple group-hover:text-white transition-all duration-300">
+                  <div className="p-3 rounded-full bg-gray-100 group-hover:bg-theme-skyBlue group-hover:text-white transition-all duration-300">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
@@ -133,8 +133,8 @@ const Contact = () => {
           
           <div className={`lg:col-span-7 transition-all duration-700 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <div className="bg-white p-8 rounded-lg shadow-lg relative">
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-theme-purple opacity-10 rounded-full"></div>
-              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-theme-blue opacity-10 rounded-full"></div>
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-theme-lightBlue opacity-10 rounded-full"></div>
+              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-theme-skyBlue opacity-10 rounded-full"></div>
               
               <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -192,7 +192,7 @@ const Contact = () => {
                 <div>
                   <Button 
                     type="submit"
-                    className="border border-theme-skyBlue text-theme-skyBlue hover:bg-theme-skyBlue hover:text-white transition-colors px-6 py-2 shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                    className="h-auto py-3 px-6 bg-gradient-to-r from-theme-skyBlue to-theme-brightBlue text-white hover:from-theme-brightBlue hover:to-theme-skyBlue transition-all duration-500 rounded-md shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center gap-2"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? 'Sending...' : 'Send Message'}
