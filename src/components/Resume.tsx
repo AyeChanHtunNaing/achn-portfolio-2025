@@ -142,7 +142,7 @@ const Resume = () => {
     {
       title: "Third Year (Computer Science)",
       organization: "University of Computer Studies, Yangon",
-      period: "2020 - 2021",
+      period: "2017 - 2021",
       description: "Dropped out due to COVID-19 and current political situation in Myanmar \n" +
           "Specialized in Software Engineering , Java Programming, Database Management Systems, Data Structure & Algorithms and Web Programming"
     }
@@ -157,22 +157,22 @@ const Resume = () => {
     },
     {
       title: "Frontend",
-      skills: ["Bootstrap", "Tailwind CSS", "Vue", "React", "Shadcn"],
+      skills: ["Tailwind CSS", "Vue", "React", "Shadcn"],
       icon: <Code className="w-5 h-5" />
     },
     {
       title: "Backend",
-      skills: ["Spring Core", "Spring MVC", "Spring Boot", "MERN"],
+      skills: ["Spring Core", "Spring MVC", "Spring Boot"],
       icon: <Code className="w-5 h-5" />
     },
     {
       title: "Mobile",
-      skills: ["Flutter", "React Native"],
+      skills: ["React Native"],
       icon: <Smartphone className="w-5 h-5" />
     },
     {
       title: "Database",
-      skills: ["MySQL", "Oracle SQL", "AWS DynamoDB", "Prisma ORM", "PostgreSQL", "MongoDB"],
+      skills: ["MySQL", "Oracle SQL", "AWS DynamoDB", "Prisma ORM", "PostgreSQL"],
       icon: <Database className="w-5 h-5" />
     },
     {
@@ -182,7 +182,7 @@ const Resume = () => {
     },
     {
       title: "State Management",
-      skills: ["Tanstack query", "RTK query", "Zustand", "Redux-toolkit", "Pinia", "GetX"],
+      skills: ["Tanstack query", "RTK query", "Zustand", "Redux-toolkit"],
       icon: <Star className="w-5 h-5" />
     },
     {
