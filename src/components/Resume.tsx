@@ -122,6 +122,12 @@ const Resume = () => {
 
   const education = [
     {
+      title: "Master of Science in Information Technology",
+      organization: "University of the People",
+      period: "2025 - Current",
+      description: "Specialized in Databases, Operating Systems, Algorithms, Software Engineering, Human-Computer Interaction, Artificial Intelligence, Machine Learning, and Cybersecurity"
+    },
+    {
       title: "BSc (Hons) in Computing",
       organization: "University of Greenwich",
       period: "2023 - 2025",
@@ -167,7 +173,7 @@ const Resume = () => {
     },
     {
       title: "Mobile",
-      skills: ["React Native"],
+      skills: ["Flutter"],
       icon: <Smartphone className="w-5 h-5" />
     },
     {
