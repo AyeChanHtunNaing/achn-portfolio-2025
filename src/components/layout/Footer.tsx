@@ -1,57 +1,47 @@
-
-import { Github, Linkedin, Mail, Instagram } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import { NAV_ITEMS } from '@/constants/navigation';
+import { Link, useLocation } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   return (
-    <footer className="mt-8 border-t border-white/60 bg-white/20 py-12 backdrop-blur-xl">
-      <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-        <div className="mb-8 flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-          <div className="mb-6 md:mb-0">
-            <div className="mb-2">
-              <h3 className="text-lg font-semibold text-slate-900">
-                Peace<span className="text-theme-skyBlue">Chan</span>
-              </h3>
-            </div>
-            <p className="text-sm text-slate-600">Building backend systems and web applications with Java, JavaScript, and React.</p>
+    <footer className={`border-t border-white/5 py-10 ${isHomePage ? 'lg:pl-[26rem]' : ''}`}>
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 sm:px-8 lg:px-10">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.18em] text-slate-500">Portfolio</p>
+            <p className="mt-2 max-w-xl text-sm text-slate-400">
+              Building backend systems and web applications with a focus on maintainability, testing, and practical product delivery.
+            </p>
           </div>
-          
-          <div className="flex space-x-2">
-            <a href="https://github.com/aungmoe" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="glass-accent-soft inline-flex h-10 w-10 items-center justify-center rounded-xl transition hover:text-slate-900">
-              <Github className="w-4 h-4" />
+          <div className="flex items-center gap-2 text-slate-400">
+            <a href="https://github.com/aungmoe" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="rounded-md border border-white/10 bg-white/5 p-2.5 transition hover:-translate-y-0.5 hover:text-emerald-200">
+              <Github className="h-4 w-4" />
             </a>
-            <a href="https://www.linkedin.com/in/aung-moe" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="glass-accent-soft inline-flex h-10 w-10 items-center justify-center rounded-xl transition hover:text-slate-900">
-              <Linkedin className="w-4 h-4" />
+            <a href="https://www.linkedin.com/in/aung-moe" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="rounded-md border border-white/10 bg-white/5 p-2.5 transition hover:-translate-y-0.5 hover:text-emerald-200">
+              <Linkedin className="h-4 w-4" />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="glass-accent-soft inline-flex h-10 w-10 items-center justify-center rounded-xl transition hover:text-slate-900">
-              <Instagram className="w-4 h-4" />
-            </a>
-            <a href="mailto:aungmoe@example.com" aria-label="Email" className="glass-accent-soft inline-flex h-10 w-10 items-center justify-center rounded-xl transition hover:text-slate-900">
-              <Mail className="w-4 h-4" />
+            <a href="mailto:achn@peacechan.dev" aria-label="Email" className="rounded-md border border-white/10 bg-white/5 p-2.5 transition hover:-translate-y-0.5 hover:text-emerald-200">
+              <Mail className="h-4 w-4" />
             </a>
           </div>
         </div>
-        
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/60 pt-6 md:flex-row">
-          <p className="text-xs text-slate-500">
-            © 2019 - {currentYear} Peace Chan. All rights reserved.
-          </p>
-          
-          <div>
-            <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2">
-              {NAV_ITEMS.filter(({ id }) => id !== 'home').map(({ id, label }) => (
-                <a
-                  key={id}
-                  href={`/#${id}`}
-                  className="text-xs font-medium text-slate-500 transition hover:text-slate-900"
-                >
+
+        <div className="flex flex-col gap-3 border-t border-white/5 pt-5 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {currentYear} Peace Chan</p>
+          <nav className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            {NAV_ITEMS.filter(({ id }) => id !== 'home').map(({ id, label }) => {
+              const to = id === 'projects' ? '/projects' : id === 'blog' ? '/articles' : `/#${id}`;
+              return (
+                <Link key={id} to={to} className="transition hover:text-slate-300">
                   {label}
-                </a>
-              ))}
-            </nav>
-          </div>
+                </Link>
+              );
+            })}
+          </nav>
         </div>
       </div>
     </footer>

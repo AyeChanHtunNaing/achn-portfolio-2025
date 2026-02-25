@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -11,61 +11,34 @@ const Contact = () => {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const section = document.getElementById('contact');
-      if (section) {
-        const rect = section.getBoundingClientRect();
-        const isInView = rect.top <= window.innerHeight * 0.75;
-        if (isInView) setIsVisible(true);
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check on initial load
-    
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
-      // Create mailto URL
       const mailtoUrl = `mailto:achn@peacechan.dev?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`;
-      
-      // Open email client
       window.location.href = mailtoUrl;
-      
-      // Show success message
+
       toast({
-        title: "Email client opened!",
-        description: "Please send the email from your mail application.",
+        title: 'Email client opened',
+        description: 'Please send the message from your mail application.',
       });
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-    } catch (error) {
+
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch {
       toast({
-        title: "Error",
-        description: "Failed to open email client. Please try again.",
-        variant: "destructive",
+        title: 'Error',
+        description: 'Failed to open your email client. Please try again.',
+        variant: 'destructive',
       });
     } finally {
       setIsSubmitting(false);
@@ -73,131 +46,120 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative overflow-hidden py-24">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.12),_transparent_45%),radial-gradient(circle_at_bottom_right,_rgba(209,250,229,0.12),_transparent_38%)]"></div>
-      
-      <div className="container relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
-        <div className={`mb-14 mx-auto max-w-2xl text-center transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <div className="glass-accent-soft mb-3 inline-flex rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em]">
-            Contact
-          </div>
-          <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Let&apos;s build software together</h2>
-          <p className="mt-4 text-slate-600">
-            Reach out for software engineering opportunities, collaborations, or product development discussions.
+    <section id="contact" className="section-container pb-8">
+      <div className="section-heading-row">
+        <span className="section-eyebrow">05. Contact</span>
+        <div className="section-rule" />
+      </div>
+
+      <div className="grid gap-8 lg:grid-cols-[280px_minmax(0,1fr)]">
+        <div className="space-y-4">
+          <p className="text-sm leading-7 text-slate-400">
+            Reach out for software engineering opportunities, product collaborations, or backend/frontend project work.
           </p>
-        </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          <div className={`lg:col-span-5 transition-all duration-700 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <div className="glass-panel h-full rounded-2xl p-6 sm:p-8">
-              <h3 className="mb-3 text-xl font-semibold text-slate-900">Software engineering inquiry</h3>
-              <p className="mb-8 text-sm leading-6 text-slate-600">
-                Feel free to reach out if you have any questions or just want to say hello. 
-                I'm always open to new opportunities and collaborations.
-              </p>
-              
-              <div className="space-y-4">
-                <div className="glass-panel flex items-start gap-4 rounded-xl p-4 transition hover:bg-white/70">
-                  <div className="rounded-xl bg-white/70 p-3 text-slate-700">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="mb-1 text-sm font-semibold text-slate-900">Location</h4>
-                    <p className="text-sm text-slate-600">Remote</p>
-                  </div>
-                </div>
-                
-                <div className="glass-panel flex items-start gap-4 rounded-xl p-4 transition hover:bg-white/70">
-                  <div className="rounded-xl bg-white/70 p-3 text-slate-700">
-                    <Mail className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="mb-1 text-sm font-semibold text-slate-900">Email</h4>
-                    <p className="text-sm text-slate-600">achn@peacechan.dev</p>
-                  </div>
-                </div>
-                
-                <div className="glass-panel flex items-start gap-4 rounded-xl p-4 transition hover:bg-white/70">
-                  <div className="rounded-xl bg-white/70 p-3 text-slate-700">
-                    <Phone className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="mb-1 text-sm font-semibold text-slate-900">Phone</h4>
-                    <p className="text-sm text-slate-600">+65 94219072</p>
-                  </div>
-                </div>
+
+          <div className="surface-panel p-4">
+            <div className="flex items-start gap-3">
+              <MapPin className="mt-0.5 h-4 w-4 text-emerald-200" />
+              <div>
+                <p className="text-sm font-medium text-slate-200">Location</p>
+                <p className="mt-1 text-sm text-slate-400">Remote</p>
               </div>
             </div>
           </div>
-          
-          <div className={`lg:col-span-7 transition-all duration-700 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <div className="glass-panel-strong relative rounded-2xl p-6 sm:p-8">
-              <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label htmlFor="name" className="block text-sm font-medium text-slate-700">Your Name</label>
-                    <Input 
-                      id="name"
-                      type="text" 
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="glass-input h-11 rounded-xl border-white/80 focus-visible:ring-sky-200"
-                      required 
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-700">Your Email</label>
-                    <Input 
-                      id="email"
-                      type="email" 
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="glass-input h-11 rounded-xl border-white/80 focus-visible:ring-sky-200"
-                      required 
-                    />
-                  </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <label htmlFor="subject" className="block text-sm font-medium text-slate-700">Subject</label>
-                  <Input 
-                    id="subject"
-                    type="text" 
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    className="glass-input h-11 rounded-xl border-white/80 focus-visible:ring-sky-200"
-                    required 
-                  />
-                </div>
-                
-                <div className="space-y-2">
-                  <label htmlFor="message" className="block text-sm font-medium text-slate-700">Your Message</label>
-                  <Textarea 
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="glass-input min-h-[150px] rounded-xl border-white/80 focus-visible:ring-sky-200"
-                    required 
-                  />
-                </div>
-                
-                <div>
-                  <Button 
-                    type="submit"
-                    className="glass-accent inline-flex h-11 items-center gap-2 rounded-xl px-5 text-slate-900 hover:brightness-[1.02]"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
-                    <Send className="w-4 h-4" />
-                  </Button>
-                </div>
-              </form>
+
+          <div className="surface-panel p-4">
+            <div className="flex items-start gap-3">
+              <Mail className="mt-0.5 h-4 w-4 text-emerald-200" />
+              <div>
+                <p className="text-sm font-medium text-slate-200">Email</p>
+                <p className="mt-1 break-all text-sm text-slate-400">achn@peacechan.dev</p>
+              </div>
             </div>
           </div>
+
+          <div className="surface-panel p-4">
+            <div className="flex items-start gap-3">
+              <Phone className="mt-0.5 h-4 w-4 text-emerald-200" />
+              <div>
+                <p className="text-sm font-medium text-slate-200">Phone</p>
+                <p className="mt-1 text-sm text-slate-400">+65 94219072</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="surface-panel-strong p-5 sm:p-6">
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div className="grid gap-5 sm:grid-cols-2">
+              <div className="space-y-2">
+                <label htmlFor="name" className="text-sm text-slate-300">
+                  Name
+                </label>
+                <Input
+                  id="name"
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="h-11 border-white/10 bg-white/5 text-slate-100 placeholder:text-slate-500 focus-visible:ring-emerald-300/30"
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="email" className="text-sm text-slate-300">
+                  Email
+                </label>
+                <Input
+                  id="email"
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="h-11 border-white/10 bg-white/5 text-slate-100 placeholder:text-slate-500 focus-visible:ring-emerald-300/30"
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="subject" className="text-sm text-slate-300">
+                Subject
+              </label>
+              <Input
+                id="subject"
+                type="text"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                className="h-11 border-white/10 bg-white/5 text-slate-100 placeholder:text-slate-500 focus-visible:ring-emerald-300/30"
+                required
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="message" className="text-sm text-slate-300">
+                Message
+              </label>
+              <Textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                className="min-h-[150px] border-white/10 bg-white/5 text-slate-100 placeholder:text-slate-500 focus-visible:ring-emerald-300/30"
+                required
+              />
+            </div>
+
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="inline-flex h-11 items-center gap-2 rounded-md border border-emerald-300/30 bg-emerald-300/10 px-5 text-emerald-100 hover:bg-emerald-300/15"
+            >
+              {isSubmitting ? 'Opening...' : 'Send Message'}
+              <Send className="h-4 w-4" />
+            </Button>
+          </form>
         </div>
       </div>
     </section>

@@ -1,29 +1,42 @@
-# ACHN Portfolio (Vite + React + TypeScript)
+# ACHN Portfolio
 
-Personal portfolio site built with Vite, React, TypeScript, Tailwind CSS, and shadcn/ui components.
+Personal portfolio website built with Vite, React, TypeScript, Tailwind CSS, and shadcn/ui.
+
+Live site: [https://peacechan.dev/](https://peacechan.dev/)
+
+The current UI is a dark, responsive portfolio layout with:
+- desktop sticky left sidebar navigation
+- mobile top navigation with menu drawer
+- section-based homepage (`About`, `Resume`, `Projects`, `Writing`, `Contact`)
+- custom cartoon avatar in the About card
+
+## Design Inspiration
+
+This portfolio rebrand is inspired by [Brittany Chiang's portfolio](https://brittanychiang.com/), especially the dark visual style and desktop sidebar + content layout approach.
 
 ## Tech Stack
 
-- React 18 + TypeScript
+- React 18
+- TypeScript
 - Vite 5
 - Tailwind CSS
 - React Router
 - shadcn/ui + Radix UI
-- TanStack Query (app shell setup)
+- TanStack Query (base app setup)
 
-## Local Development
+## Getting Started
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open the local URL shown by Vite (usually `http://localhost:5173`).
+Vite will print the local URL (usually `http://localhost:5173`).
 
 ## Scripts
 
-- `npm run dev` - start the Vite dev server
-- `npm run build` - production build to `dist/`
+- `npm run dev` - start local dev server
+- `npm run build` - build production bundle into `dist/`
 - `npm run build:dev` - build using development mode
 - `npm run preview` - preview the production build locally
 - `npm run lint` - run ESLint
@@ -33,43 +46,69 @@ Open the local URL shown by Vite (usually `http://localhost:5173`).
 ```text
 src/
   components/
-    layout/       # shared page chrome (header/footer)
-    sections/     # homepage and reusable content sections
-    ui/           # shadcn/ui primitives
-  constants/      # shared navigation config
-  data/           # portfolio/article seed content
-  hooks/          # reusable hooks
-  lib/            # utilities
-  pages/          # route pages
+    layout/        # Header / Footer
+    sections/      # Homepage sections
+    ui/            # shadcn/ui primitives
+  constants/       # Navigation constants
+  data/            # Projects and articles data
+  hooks/           # Reusable hooks
+  lib/             # Utilities
+  pages/           # Route pages (home, projects, articles)
+public/
+  avatars/         # Avatar assets (current cartoon avatar lives here)
 ```
 
-## Content Customization
+## Customize Content
 
-- Update article list data in `src/data/blog-posts.ts`
-- Update project cards in `src/data/projects.ts`
-- Update social/contact info in:
-  - `src/components/sections/About.tsx`
-  - `src/components/layout/Footer.tsx`
-- Update page copy/hero content in `src/components/sections/HomeHero.tsx`
+### Text and Section Content
 
-## Build and Deploy (DigitalOcean + Nginx)
+- Home hero: `src/components/sections/HomeHero.tsx`
+- About section: `src/components/sections/About.tsx`
+- Resume section: `src/components/sections/Resume.tsx`
+- Contact section: `src/components/sections/Contact.tsx`
 
-This is a static site build, so the production output is generated in `dist/`.
+### Projects and Articles Data
 
-### 1. Build locally or on the server
+- Projects list: `src/data/projects.ts`
+- Articles list: `src/data/blog-posts.ts`
+
+### Navigation / Layout
+
+- Header: `src/components/layout/Header.tsx`
+- Footer: `src/components/layout/Footer.tsx`
+- Nav items: `src/constants/navigation.ts`
+
+### Avatar Image
+
+Current avatar image used in the About section:
+- `public/avatars/avatar-cartoon.png`
+
+If you replace this file with a new image using the same name, the site will update automatically.
+
+## Styling Notes
+
+- Global theme and shared utility classes live in `src/index.css`
+- The site uses a dark palette with emerald accents
+- The About avatar card is responsive and scales across mobile/tablet/desktop
+
+## Build and Deploy (Static Hosting / Nginx)
+
+This app builds to static files in `dist/`.
+
+### 1. Build
 
 ```bash
 npm install
 npm run build
 ```
 
-### 2. Copy `dist/` to the server
+### 2. Upload `dist/` to your server
 
 ```bash
 scp -r dist/* root@your_droplet_ip:/var/www/html/
 ```
 
-### 3. Configure Nginx for SPA routing
+### 3. Configure Nginx (SPA routing)
 
 ```nginx
 server {
@@ -92,7 +131,7 @@ sudo nginx -t
 sudo systemctl reload nginx
 ```
 
-### 5. (Optional) Enable HTTPS
+### 5. Optional HTTPS (Certbot)
 
 ```bash
 sudo apt install certbot python3-certbot-nginx
@@ -101,5 +140,5 @@ sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
 
 ## Notes
 
-- `public/` contains static assets (for example `profile.jpeg` and `robots.txt`)
-- The app uses client-side routing, so `try_files ... /index.html` is required in Nginx
+- `public/` stores static assets (logo, avatar, profile images, robots.txt)
+- Because this is a client-side routed app, Nginx must fall back to `index.html`
