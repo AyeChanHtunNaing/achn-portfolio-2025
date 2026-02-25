@@ -1,161 +1,105 @@
-# React App Deployment on DigitalOcean
+# ACHN Portfolio (Vite + React + TypeScript)
 
-This guide explains how to deploy a React application on a DigitalOcean Droplet using Nginx.
+Personal portfolio site built with Vite, React, TypeScript, Tailwind CSS, and shadcn/ui components.
 
----
+## Tech Stack
 
-## Prerequisites
+- React 18 + TypeScript
+- Vite 5
+- Tailwind CSS
+- React Router
+- shadcn/ui + Radix UI
+- TanStack Query (app shell setup)
 
-* A DigitalOcean account
-* A React project ready for deployment
-* SSH access to your Droplet
-* Optional: A custom domain (e.g., `peacechan.dev`)
-
----
-
-## Steps to Deploy
-
-### 1. Create a DigitalOcean Droplet
-
-1. Go to [DigitalOcean](https://www.digitalocean.com/) and sign in or create an account.
-2. Create a new Droplet using an Ubuntu image.
-3. Choose a plan based on your needs (a small plan is fine for small projects).
-4. Add SSH keys for secure access (or use a password if you prefer).
-5. Select a datacenter region and create the Droplet.
-
-### 2. Access Your Droplet
-
-Connect to your Droplet using SSH:
+## Local Development
 
 ```bash
-ssh root@your_droplet_ip
+npm install
+npm run dev
 ```
 
-### 3. Set Up Node.js and NPM
+Open the local URL shown by Vite (usually `http://localhost:5173`).
 
-Install Node.js and NPM on your Droplet:
+## Scripts
 
-```bash
-sudo apt update
-sudo apt install nodejs
-sudo apt install npm
+- `npm run dev` - start the Vite dev server
+- `npm run build` - production build to `dist/`
+- `npm run build:dev` - build using development mode
+- `npm run preview` - preview the production build locally
+- `npm run lint` - run ESLint
+
+## Project Structure
+
+```text
+src/
+  components/
+    layout/       # shared page chrome (header/footer)
+    sections/     # homepage and reusable content sections
+    ui/           # shadcn/ui primitives
+  constants/      # shared navigation config
+  data/           # portfolio/article seed content
+  hooks/          # reusable hooks
+  lib/            # utilities
+  pages/          # route pages
 ```
 
-### 4. Install Nginx (Optional but Recommended)
+## Content Customization
 
-Install Nginx to serve your React app:
+- Update article list data in `src/data/blog-posts.ts`
+- Update project cards in `src/data/projects.ts`
+- Update social/contact info in:
+  - `src/components/sections/About.tsx`
+  - `src/components/layout/Footer.tsx`
+- Update page copy/hero content in `src/components/sections/HomeHero.tsx`
 
-```bash
-sudo apt install nginx
-```
+## Build and Deploy (DigitalOcean + Nginx)
 
-### 5. Clone Your Git Repository
+This is a static site build, so the production output is generated in `dist/`.
 
-Clone your React app repository:
-
-```bash
-git clone <your-repo-url>
-cd <your-repo-folder>
-```
-
-### 6. Build Your React App
-
-Install dependencies and create a production build:
+### 1. Build locally or on the server
 
 ```bash
 npm install
 npm run build
 ```
 
-> Note: React apps created with Create React App generate the build in the `build/` folder. If your project uses `dist/`, replace `build/` with `dist/` in the following commands.
-
-### 7. Transfer the Build Files to Your Droplet
-
-Upload the build files to Nginx's web directory:
+### 2. Copy `dist/` to the server
 
 ```bash
-scp -r build/* root@your_droplet_ip:/var/www/html
+scp -r dist/* root@your_droplet_ip:/var/www/html/
 ```
 
-### 8. Configure Nginx
-
-Edit the Nginx configuration:
-
-```bash
-sudo nano /etc/nginx/sites-available/default
-```
-
-Replace the file content with:
+### 3. Configure Nginx for SPA routing
 
 ```nginx
 server {
     listen 80;
-    server_name yourdomain.com www.yourdomain.com;  # Use your domain or Droplet IP
+    server_name yourdomain.com www.yourdomain.com;
 
     root /var/www/html;
     index index.html;
 
     location / {
-        try_files $uri /index.html;
+        try_files $uri $uri/ /index.html;
     }
 }
 ```
 
-### 9. Restart Nginx
-
-Apply the new configuration:
+### 4. Reload Nginx
 
 ```bash
 sudo nginx -t
-sudo systemctl restart nginx
+sudo systemctl reload nginx
 ```
 
-### 10. Test the Deployment
-
-Open a browser and navigate to:
-
-```
-http://yourdomain.com
-```
-
-or
-
-```
-http://your_droplet_ip
-```
-
-You should see your React application live.
-
----
-
-## Optional: Configure HTTPS with Let’s Encrypt
-
-1. Install Certbot:
+### 5. (Optional) Enable HTTPS
 
 ```bash
 sudo apt install certbot python3-certbot-nginx
-```
-
-2. Run Certbot to generate and configure SSL:
-
-```bash
 sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
 ```
 
-3. Verify HTTPS by visiting:
-
-```
-https://yourdomain.com
-```
-
----
-
 ## Notes
 
-* React build files are static, so you don’t need Node.js to serve the production app; Nginx is sufficient.
-* Always ensure your domain DNS points to your Droplet's IP before setting up HTTPS.
-
----
-
-**Author:** Your Name
-**Date:** YYYY-MM-DD
+- `public/` contains static assets (for example `profile.jpeg` and `robots.txt`)
+- The app uses client-side routing, so `try_files ... /index.html` is required in Nginx

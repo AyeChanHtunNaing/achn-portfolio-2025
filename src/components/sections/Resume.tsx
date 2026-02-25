@@ -21,18 +21,18 @@ const ResumeItem = ({
   
   return (
     <div className="relative mb-12 last:mb-0">
-      <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-10">
+      <div className="glass-panel flex flex-col gap-4 rounded-2xl p-4 sm:p-5 md:flex-row md:items-start md:gap-8">
         <div className="md:w-1/4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 border border-theme-skyBlue bg-theme-lightBlue bg-opacity-30">
-            <Icon className="w-4 h-4 text-theme-skyBlue" />
-            <span className="font-medium text-theme-skyBlue">{period}</span>
+          <div className="glass-accent-soft inline-flex max-w-full items-center gap-2 rounded-full px-3 py-1.5">
+            <Icon className="w-4 h-4 text-slate-600" />
+            <span className="text-sm font-semibold text-slate-700">{period}</span>
           </div>
         </div>
         
-        <div className="md:w-3/4 pt-2">
-          <h3 className="text-xl font-bold mb-1">{title}</h3>
-          <div className="mb-3 text-theme-skyBlue">{organization}</div>
-          <p className="text-gray-700 whitespace-pre-line">{description}</p>
+        <div className="md:w-3/4">
+          <h3 className="mb-1 text-lg font-semibold text-slate-900 break-words">{title}</h3>
+          <div className="mb-3 text-sm font-medium text-slate-600 break-words">{organization}</div>
+          <p className="whitespace-pre-line text-sm leading-6 text-slate-600">{description}</p>
         </div>
       </div>
     </div>
@@ -50,19 +50,19 @@ const SkillCategory = ({
   icon: React.ReactNode;
 }) => {
   return (
-    <Card className="overflow-hidden border-none shadow-md transition-all hover:shadow-lg">
+    <Card className="glass-panel overflow-hidden rounded-2xl transition-all hover:shadow-md">
       <CardContent className="p-5">
         <div className="flex items-center gap-3 mb-4">
-          <div className="bg-theme-skyBlue text-white p-2 rounded-full">
+          <div className="rounded-xl bg-white/70 p-2 text-slate-700">
             {icon}
           </div>
-          <h4 className="text-lg font-bold">{title}</h4>
+          <h4 className="text-lg font-semibold text-slate-900">{title}</h4>
         </div>
         <div className="flex flex-wrap gap-2">
           {skills.map((skill, index) => (
             <span 
               key={index} 
-              className="bg-theme-lightBlue bg-opacity-30 px-3 py-1 text-sm rounded-full border border-theme-lightBlue hover:bg-theme-skyBlue hover:text-white transition-colors"
+              className="glass-accent-soft rounded-full px-3 py-1 text-sm text-slate-700"
             >
               {skill}
             </span>
@@ -199,11 +199,17 @@ const Resume = () => {
   ];
 
   return (
-    <section id="resume" className="bg-theme-lightBlue bg-opacity-10 py-20">
+    <section id="resume" className="py-24">
       <div className="section-container">
-        <div className="flex flex-col gap-4 mb-16">
-          <div className="inline-block px-4 py-1 border border-theme-skyBlue self-start">
-            <span className="text-sm font-medium text-theme-skyBlue">Resume</span>
+        <div className="mb-14 flex flex-col gap-4">
+          <div className="glass-accent-soft inline-flex self-start rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em]">
+            Resume
+          </div>
+          <div className="max-w-3xl">
+            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Experience, education, and technical skills</h2>
+            <p className="mt-3 text-slate-600">
+              A summary of my professional background, academic training, and the technologies I use to build production-ready software.
+            </p>
           </div>
         </div>
         
@@ -214,12 +220,12 @@ const Resume = () => {
             onOpenChange={() => setExpandedSection(expandedSection === "experience" ? "" : "experience")}
             className="w-full"
           >
-            <div className="flex gap-4 items-baseline mb-10">
-              <CollapsibleTrigger className="text-2xl font-bold hover:opacity-80 transition-opacity flex items-center gap-2 text-theme-skyBlue">
+            <div className="mb-10 flex flex-wrap gap-4 items-baseline">
+              <CollapsibleTrigger className="flex items-center gap-2 text-2xl font-bold text-slate-900 transition-opacity hover:opacity-80">
                 <Award className="w-6 h-6" /> 
                 Work Experience
               </CollapsibleTrigger>
-              <div className="flex-1 border-t border-theme-lightBlue self-center"></div>
+              <div className="flex-1 self-center border-t border-slate-200"></div>
             </div>
             
             <CollapsibleContent className="animate-accordion-down">
@@ -233,12 +239,12 @@ const Resume = () => {
           
           {/* Education Section */}
           <div className="w-full">
-            <div className="flex gap-4 items-baseline mb-10">
-              <h3 className="text-2xl font-bold flex items-center gap-2 text-theme-skyBlue">
+            <div className="mb-10 flex flex-wrap gap-4 items-baseline">
+              <h3 className="flex items-center gap-2 text-2xl font-bold text-slate-900">
                 <GraduationCap className="w-6 h-6" />
                 Education
               </h3>
-              <div className="flex-1 border-t border-theme-lightBlue self-center"></div>
+              <div className="flex-1 self-center border-t border-slate-200"></div>
             </div>
             
             <div>
@@ -251,12 +257,12 @@ const Resume = () => {
         
         {/* Skills Section with improved design */}
         <div className="mt-20">
-          <div className="flex gap-4 items-baseline mb-10">
-            <h3 className="text-2xl font-bold flex items-center gap-2 text-theme-skyBlue">
+          <div className="mb-10 flex flex-wrap gap-4 items-baseline">
+            <h3 className="flex items-center gap-2 text-2xl font-bold text-slate-900">
               <Star className="w-6 h-6" />
               Skills
             </h3>
-            <div className="flex-1 border-t border-theme-lightBlue self-center"></div>
+            <div className="flex-1 self-center border-t border-slate-200"></div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

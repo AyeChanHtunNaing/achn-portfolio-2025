@@ -73,58 +73,57 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-gray-50 relative overflow-hidden">
-      {/* Abstract background elements */}
-      <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-white to-transparent"></div>
-      <div className="absolute -top-10 -right-10 w-72 h-72 bg-theme-skyBlue opacity-5 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-10 -left-10 w-80 h-80 bg-theme-lightBlue opacity-5 rounded-full blur-3xl"></div>
+    <section id="contact" className="relative overflow-hidden py-24">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.12),_transparent_45%),radial-gradient(circle_at_bottom_right,_rgba(209,250,229,0.12),_transparent_38%)]"></div>
       
-      <div className="container mx-auto px-4 max-w-5xl relative z-10">
-        <div className={`mb-16 max-w-md text-center mx-auto transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <div className="inline-block mb-2 border-b-2 border-theme-skyBlue">
-            <span className="text-xs font-medium uppercase tracking-wider">Contact</span>
+      <div className="container relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
+        <div className={`mb-14 mx-auto max-w-2xl text-center transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <div className="glass-accent-soft mb-3 inline-flex rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em]">
+            Contact
           </div>
-          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-theme-skyBlue to-theme-brightBlue">Get In Touch</h2>
-          <p className="mt-4 text-gray-600">Feel free to reach out for collaborations or just a friendly hello!</p>
+          <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Let&apos;s build software together</h2>
+          <p className="mt-4 text-slate-600">
+            Reach out for software engineering opportunities, collaborations, or product development discussions.
+          </p>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className={`lg:col-span-5 transition-all duration-700 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <div className="bg-white p-8 rounded-lg shadow-lg h-full">
-              <h3 className="text-xl font-medium mb-4 border-b pb-2">Let's talk about your project</h3>
-              <p className="text-gray-500 mb-8 text-sm">
+            <div className="glass-panel h-full rounded-2xl p-6 sm:p-8">
+              <h3 className="mb-3 text-xl font-semibold text-slate-900">Software engineering inquiry</h3>
+              <p className="mb-8 text-sm leading-6 text-slate-600">
                 Feel free to reach out if you have any questions or just want to say hello. 
                 I'm always open to new opportunities and collaborations.
               </p>
               
-              <div className="space-y-8">
-                <div className="flex items-start gap-4 group hover:bg-gray-50 p-3 rounded-md transition-all duration-300 transform hover:translate-x-2">
-                  <div className="p-3 rounded-full bg-gray-100 group-hover:bg-theme-skyBlue group-hover:text-white transition-all duration-300">
+              <div className="space-y-4">
+                <div className="glass-panel flex items-start gap-4 rounded-xl p-4 transition hover:bg-white/70">
+                  <div className="rounded-xl bg-white/70 p-3 text-slate-700">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-sm mb-1">Location</h4>
-                    <p className="text-gray-500 text-sm">Remote</p>
+                    <h4 className="mb-1 text-sm font-semibold text-slate-900">Location</h4>
+                    <p className="text-sm text-slate-600">Remote</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-4 group hover:bg-gray-50 p-3 rounded-md transition-all duration-300 transform hover:translate-x-2">
-                  <div className="p-3 rounded-full bg-gray-100 group-hover:bg-theme-skyBlue group-hover:text-white transition-all duration-300">
+                <div className="glass-panel flex items-start gap-4 rounded-xl p-4 transition hover:bg-white/70">
+                  <div className="rounded-xl bg-white/70 p-3 text-slate-700">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-sm mb-1">Email</h4>
-                    <p className="text-gray-500 text-sm">achn@peacechan.dev</p>
+                    <h4 className="mb-1 text-sm font-semibold text-slate-900">Email</h4>
+                    <p className="text-sm text-slate-600">achn@peacechan.dev</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-4 group hover:bg-gray-50 p-3 rounded-md transition-all duration-300 transform hover:translate-x-2">
-                  <div className="p-3 rounded-full bg-gray-100 group-hover:bg-theme-skyBlue group-hover:text-white transition-all duration-300">
+                <div className="glass-panel flex items-start gap-4 rounded-xl p-4 transition hover:bg-white/70">
+                  <div className="rounded-xl bg-white/70 p-3 text-slate-700">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-sm mb-1">Phone</h4>
-                    <p className="text-gray-500 text-sm">+65 94219072</p>
+                    <h4 className="mb-1 text-sm font-semibold text-slate-900">Phone</h4>
+                    <p className="text-sm text-slate-600">+65 94219072</p>
                   </div>
                 </div>
               </div>
@@ -132,59 +131,56 @@ const Contact = () => {
           </div>
           
           <div className={`lg:col-span-7 transition-all duration-700 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <div className="bg-white p-8 rounded-lg shadow-lg relative">
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-theme-lightBlue opacity-10 rounded-full"></div>
-              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-theme-skyBlue opacity-10 rounded-full"></div>
-              
+            <div className="glass-panel-strong relative rounded-2xl p-6 sm:p-8">
               <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium block">Your Name</label>
+                    <label htmlFor="name" className="block text-sm font-medium text-slate-700">Your Name</label>
                     <Input 
                       id="name"
                       type="text" 
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="border-gray-200 focus-visible:ring-theme-skyBlue focus-visible:border-theme-skyBlue h-11 transition-all duration-300"
+                      className="glass-input h-11 rounded-xl border-white/80 focus-visible:ring-sky-200"
                       required 
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium block">Your Email</label>
+                    <label htmlFor="email" className="block text-sm font-medium text-slate-700">Your Email</label>
                     <Input 
                       id="email"
                       type="email" 
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="border-gray-200 focus-visible:ring-theme-skyBlue focus-visible:border-theme-skyBlue h-11 transition-all duration-300"
+                      className="glass-input h-11 rounded-xl border-white/80 focus-visible:ring-sky-200"
                       required 
                     />
                   </div>
                 </div>
                 
                 <div className="space-y-2">
-                  <label htmlFor="subject" className="text-sm font-medium block">Subject</label>
+                  <label htmlFor="subject" className="block text-sm font-medium text-slate-700">Subject</label>
                   <Input 
                     id="subject"
                     type="text" 
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="border-gray-200 focus-visible:ring-theme-skyBlue focus-visible:border-theme-skyBlue h-11 transition-all duration-300"
+                    className="glass-input h-11 rounded-xl border-white/80 focus-visible:ring-sky-200"
                     required 
                   />
                 </div>
                 
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium block">Your Message</label>
+                  <label htmlFor="message" className="block text-sm font-medium text-slate-700">Your Message</label>
                   <Textarea 
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    className="border-gray-200 focus-visible:ring-theme-skyBlue focus-visible:border-theme-skyBlue min-h-[150px] transition-all duration-300"
+                    className="glass-input min-h-[150px] rounded-xl border-white/80 focus-visible:ring-sky-200"
                     required 
                   />
                 </div>
@@ -192,7 +188,7 @@ const Contact = () => {
                 <div>
                   <Button 
                     type="submit"
-                    className="h-auto py-3 px-6 bg-gradient-to-r from-theme-skyBlue to-theme-brightBlue text-white hover:from-theme-brightBlue hover:to-theme-skyBlue transition-all duration-500 rounded-md shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center gap-2"
+                    className="glass-accent inline-flex h-11 items-center gap-2 rounded-xl px-5 text-slate-900 hover:brightness-[1.02]"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? 'Sending...' : 'Send Message'}
