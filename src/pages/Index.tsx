@@ -1,4 +1,3 @@
-
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 import About from '@/components/sections/About';
@@ -11,25 +10,26 @@ import { useEffect, useState } from 'react';
 
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  
+
   useEffect(() => {
     setIsLoaded(true);
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <Header />
-      
-      <main>
-        <HomeHero isLoaded={isLoaded} />
-        
-        <About />
-        <Resume />
-        <Projects />
-        <Blog />
-        <Contact />
+
+      <main className="pb-12 lg:pl-[26rem]">
+        <div className="mx-auto w-full max-w-4xl px-6 pt-20 sm:px-8 lg:max-w-5xl lg:px-10 lg:pt-16">
+          <HomeHero isLoaded={isLoaded} />
+          <About />
+          <Resume />
+          <Projects />
+          <Blog />
+          <Contact />
+        </div>
       </main>
-      
+
       <Footer />
     </div>
   );

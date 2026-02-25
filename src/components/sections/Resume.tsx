@@ -24,15 +24,15 @@ const ResumeItem = ({
       <div className="glass-panel flex flex-col gap-4 rounded-2xl p-4 sm:p-5 md:flex-row md:items-start md:gap-8">
         <div className="md:w-1/4">
           <div className="glass-accent-soft inline-flex max-w-full items-center gap-2 rounded-full px-3 py-1.5">
-            <Icon className="w-4 h-4 text-slate-600" />
-            <span className="text-sm font-semibold text-slate-700">{period}</span>
+            <Icon className="w-4 h-4 text-slate-400" />
+            <span className="text-sm font-semibold text-slate-300">{period}</span>
           </div>
         </div>
         
         <div className="md:w-3/4">
-          <h3 className="mb-1 text-lg font-semibold text-slate-900 break-words">{title}</h3>
-          <div className="mb-3 text-sm font-medium text-slate-600 break-words">{organization}</div>
-          <p className="whitespace-pre-line text-sm leading-6 text-slate-600">{description}</p>
+          <h3 className="mb-1 text-lg font-semibold text-slate-100 break-words">{title}</h3>
+          <div className="mb-3 text-sm font-medium text-slate-400 break-words">{organization}</div>
+          <p className="whitespace-pre-line text-sm leading-6 text-slate-400">{description}</p>
         </div>
       </div>
     </div>
@@ -53,16 +53,16 @@ const SkillCategory = ({
     <Card className="glass-panel overflow-hidden rounded-2xl transition-all hover:shadow-md">
       <CardContent className="p-5">
         <div className="flex items-center gap-3 mb-4">
-          <div className="rounded-xl bg-white/70 p-2 text-slate-700">
+          <div className="rounded-xl bg-white/5 p-2 text-slate-300">
             {icon}
           </div>
-          <h4 className="text-lg font-semibold text-slate-900">{title}</h4>
+          <h4 className="text-lg font-semibold text-slate-100">{title}</h4>
         </div>
         <div className="flex flex-wrap gap-2">
           {skills.map((skill, index) => (
             <span 
               key={index} 
-              className="glass-accent-soft rounded-full px-3 py-1 text-sm text-slate-700"
+              className="glass-accent-soft rounded-full px-3 py-1 text-sm text-slate-300"
             >
               {skill}
             </span>
@@ -199,19 +199,17 @@ const Resume = () => {
   ];
 
   return (
-    <section id="resume" className="py-24">
-      <div className="section-container">
-        <div className="mb-14 flex flex-col gap-4">
-          <div className="glass-accent-soft inline-flex self-start rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em]">
-            Resume
-          </div>
-          <div className="max-w-3xl">
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Experience, education, and technical skills</h2>
-            <p className="mt-3 text-slate-600">
-              A summary of my professional background, academic training, and the technologies I use to build production-ready software.
-            </p>
-          </div>
-        </div>
+    <section id="resume" className="section-container">
+      <div className="section-heading-row">
+        <span className="section-eyebrow">02. Resume</span>
+        <div className="section-rule" />
+      </div>
+      <div className="mb-14 max-w-3xl">
+        <h2 className="text-3xl font-bold text-slate-100 sm:text-4xl">Experience, education, and technical skills</h2>
+        <p className="mt-3 text-slate-400">
+          A summary of my professional background, academic training, and the technologies I use to build production-ready software.
+        </p>
+      </div>
         
         <div className="space-y-16">
           {/* Work Experience Section */}
@@ -221,11 +219,11 @@ const Resume = () => {
             className="w-full"
           >
             <div className="mb-10 flex flex-wrap gap-4 items-baseline">
-              <CollapsibleTrigger className="flex items-center gap-2 text-2xl font-bold text-slate-900 transition-opacity hover:opacity-80">
+              <CollapsibleTrigger className="flex items-center gap-2 text-2xl font-bold text-slate-100 transition-opacity hover:opacity-80">
                 <Award className="w-6 h-6" /> 
                 Work Experience
               </CollapsibleTrigger>
-              <div className="flex-1 self-center border-t border-slate-200"></div>
+              <div className="flex-1 self-center border-t border-white/10"></div>
             </div>
             
             <CollapsibleContent className="animate-accordion-down">
@@ -240,11 +238,11 @@ const Resume = () => {
           {/* Education Section */}
           <div className="w-full">
             <div className="mb-10 flex flex-wrap gap-4 items-baseline">
-              <h3 className="flex items-center gap-2 text-2xl font-bold text-slate-900">
+              <h3 className="flex items-center gap-2 text-2xl font-bold text-slate-100">
                 <GraduationCap className="w-6 h-6" />
                 Education
               </h3>
-              <div className="flex-1 self-center border-t border-slate-200"></div>
+              <div className="flex-1 self-center border-t border-white/10"></div>
             </div>
             
             <div>
@@ -258,11 +256,11 @@ const Resume = () => {
         {/* Skills Section with improved design */}
         <div className="mt-20">
           <div className="mb-10 flex flex-wrap gap-4 items-baseline">
-            <h3 className="flex items-center gap-2 text-2xl font-bold text-slate-900">
+            <h3 className="flex items-center gap-2 text-2xl font-bold text-slate-100">
               <Star className="w-6 h-6" />
               Skills
             </h3>
-            <div className="flex-1 self-center border-t border-slate-200"></div>
+            <div className="flex-1 self-center border-t border-white/10"></div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -276,7 +274,6 @@ const Resume = () => {
             ))}
           </div>
         </div>
-      </div>
     </section>
   );
 };
