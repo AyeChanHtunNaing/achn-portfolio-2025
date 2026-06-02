@@ -25,7 +25,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const mailtoUrl = `mailto:achn@peacechan.dev?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`;
+      const mailtoUrl = `mailto:hello@peacechan.dev?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`;
       window.location.href = mailtoUrl;
 
       toast({
@@ -48,7 +48,7 @@ const Contact = () => {
   return (
     <section id="contact" className="section-container pb-8">
       <div className="section-heading-row">
-        <span className="section-eyebrow">05. Contact</span>
+        <span className="section-eyebrow">06. Contact</span>
         <div className="section-rule" />
       </div>
 
@@ -63,7 +63,7 @@ const Contact = () => {
               <MapPin className="mt-0.5 h-4 w-4 text-emerald-200" />
               <div>
                 <p className="text-sm font-medium text-slate-200">Location</p>
-                <p className="mt-1 text-sm text-slate-400">Remote</p>
+                <p className="mt-1 text-sm text-slate-400">APAC</p>
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@ const Contact = () => {
               <Mail className="mt-0.5 h-4 w-4 text-emerald-200" />
               <div>
                 <p className="text-sm font-medium text-slate-200">Email</p>
-                <p className="mt-1 break-all text-sm text-slate-400">achn@peacechan.dev</p>
+                <p className="mt-1 break-all text-sm text-slate-400">hello@peacechan.dev</p>
               </div>
             </div>
           </div>

@@ -18,13 +18,13 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex items-center gap-2 text-slate-400">
-            <a href="https://github.com/aungmoe" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="rounded-md border border-white/10 bg-white/5 p-2.5 transition hover:-translate-y-0.5 hover:text-emerald-200">
+            <a href="https://github.com/AyeChanHtunNaing" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="rounded-md border border-white/10 bg-white/5 p-2.5 transition hover:-translate-y-0.5 hover:text-emerald-200">
               <Github className="h-4 w-4" />
             </a>
-            <a href="https://www.linkedin.com/in/aung-moe" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="rounded-md border border-white/10 bg-white/5 p-2.5 transition hover:-translate-y-0.5 hover:text-emerald-200">
+            <a href="https://www.linkedin.com/in/ayechanhtunnaing" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="rounded-md border border-white/10 bg-white/5 p-2.5 transition hover:-translate-y-0.5 hover:text-emerald-200">
               <Linkedin className="h-4 w-4" />
             </a>
-            <a href="mailto:achn@peacechan.dev" aria-label="Email" className="rounded-md border border-white/10 bg-white/5 p-2.5 transition hover:-translate-y-0.5 hover:text-emerald-200">
+            <a href="mailto:hello@peacechan.dev" aria-label="Email" className="rounded-md border border-white/10 bg-white/5 p-2.5 transition hover:-translate-y-0.5 hover:text-emerald-200">
               <Mail className="h-4 w-4" />
             </a>
           </div>

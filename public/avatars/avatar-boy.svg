@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="boyBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="boyAccent" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <circle cx="50" cy="50" r="50" fill="url(#boyBg)" />
+  <circle cx="50" cy="50" r="48" fill="none" stroke="#10b981" stroke-width="1.5" stroke-opacity="0.2" />
+  <circle cx="50" cy="50" r="45" fill="url(#boyAccent)" />
+  <!-- Shoulders -->
+  <path d="M 18,90 C 18,74 32,66 50,66 C 68,66 82,74 82,90 Z" fill="#64748b" />
+  <!-- Neck -->
+  <path d="M 44,56 L 44,68 L 56,68 L 56,56 Z" fill="#94a3b8" />
+  <!-- Head -->
+  <circle cx="50" cy="42" r="16" fill="#94a3b8" />
+  <!-- Hair (Boy Style) -->
+  <path d="M 33,40 C 33,26 42,22 52,22 C 60,22 66,27 67,34 C 68,41 65,41 62,39 C 58,37 54,37 52,38 C 48,39 44,43 38,43 C 35,43 33,41 33,40 Z" fill="#334155" />
+</svg>

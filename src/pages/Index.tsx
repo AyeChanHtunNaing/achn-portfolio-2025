@@ -1,7 +1,8 @@
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 import About from '@/components/sections/About';
-import Blog from '@/components/sections/Blog';
+import Awards from '@/components/sections/Awards';
+import Testimonials from '@/components/sections/Testimonials';
 import Contact from '@/components/sections/Contact';
 import HomeHero from '@/components/sections/HomeHero';
 import Projects from '@/components/sections/Projects';
@@ -25,7 +26,8 @@ const Index = () => {
           <About />
           <Resume />
           <Projects />
-          <Blog />
+          <Awards />
+          <Testimonials />
           <Contact />
         </div>
       </main>

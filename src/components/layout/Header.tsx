@@ -48,7 +48,6 @@ const Header = () => {
 
   const isActiveNavItem = (sectionId: HomeSectionId) => {
     if (sectionId === 'projects') return location.pathname === '/projects';
-    if (sectionId === 'blog') return location.pathname === '/articles';
     return isHomePage && activeSection === sectionId;
   };
 
@@ -130,13 +129,13 @@ const Header = () => {
             </div>
 
             <div className="flex items-center gap-3 text-slate-400">
-              <a href="https://github.com/aungmoe" target="_blank" rel="noopener noreferrer" className="rounded-md p-2 transition hover:-translate-y-0.5 hover:text-emerald-200" aria-label="GitHub">
+              <a href="https://github.com/AyeChanHtunNaing" target="_blank" rel="noopener noreferrer" className="rounded-md p-2 transition hover:-translate-y-0.5 hover:text-emerald-200" aria-label="GitHub">
                 <Github className="h-5 w-5" />
               </a>
-              <a href="https://www.linkedin.com/in/aung-moe" target="_blank" rel="noopener noreferrer" className="rounded-md p-2 transition hover:-translate-y-0.5 hover:text-emerald-200" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/ayechanhtunnaing" target="_blank" rel="noopener noreferrer" className="rounded-md p-2 transition hover:-translate-y-0.5 hover:text-emerald-200" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="mailto:achn@peacechan.dev" className="rounded-md p-2 transition hover:-translate-y-0.5 hover:text-emerald-200" aria-label="Email">
+              <a href="mailto:hello@peacechan.dev" className="rounded-md p-2 transition hover:-translate-y-0.5 hover:text-emerald-200" aria-label="Email">
                 <Mail className="h-5 w-5" />
               </a>
             </div>
