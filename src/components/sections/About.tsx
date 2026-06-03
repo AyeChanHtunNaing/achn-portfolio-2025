@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FileText, Github, Instagram, Linkedin } from 'lucide-react';
+import { FileText, Github, Mail, Linkedin } from 'lucide-react';
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -152,8 +152,8 @@ const About = () => {
               <a href="https://www.linkedin.com/in/ayechanhtunnaing" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="ghost-button px-3 py-2">
                 <Linkedin className="h-4 w-4" />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="ghost-button px-3 py-2">
-                <Instagram className="h-4 w-4" />
+              <a href="mailto:hello@peacechan.dev" aria-label="Email" className="ghost-button px-3 py-2">
+                <Mail className="h-4 w-4" />
               </a>
             </div>
           </div>
