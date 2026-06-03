@@ -48,8 +48,8 @@ const Projects = ({ showViewAllButton = true }: ProjectsProps) => {
         <button
           className={`rounded-full border px-3 py-1 font-mono text-[11px] font-medium transition ${
             !filter
-              ? 'border-emerald-300/30 bg-emerald-300/10 text-emerald-300'
-              : 'border-white/5 bg-white/5 text-slate-400 hover:border-white/10 hover:text-slate-200'
+              ? 'border-emerald-600/25 dark:border-emerald-300/30 bg-emerald-600/10 dark:bg-emerald-300/10 text-emerald-700 dark:text-emerald-300'
+              : 'border-black/5 dark:border-white/5 bg-black/[0.01] dark:bg-white/5 text-slate-500 dark:text-slate-400 hover:border-black/10 dark:hover:border-white/10 hover:text-slate-800 dark:hover:text-slate-200'
           }`}
           onClick={() => setFilter(null)}
         >
@@ -60,8 +60,8 @@ const Projects = ({ showViewAllButton = true }: ProjectsProps) => {
             key={tag}
             className={`rounded-full border px-3 py-1 font-mono text-[11px] font-medium transition ${
               filter === tag
-                ? 'border-emerald-300/30 bg-emerald-300/10 text-emerald-300'
-                : 'border-white/5 bg-white/5 text-slate-400 hover:border-white/10 hover:text-slate-200'
+                ? 'border-emerald-600/25 dark:border-emerald-300/30 bg-emerald-600/10 dark:bg-emerald-300/10 text-emerald-700 dark:text-emerald-300'
+                : 'border-black/5 dark:border-white/5 bg-black/[0.01] dark:bg-white/5 text-slate-500 dark:text-slate-400 hover:border-black/10 dark:hover:border-white/10 hover:text-slate-800 dark:hover:text-slate-200'
             }`}
             onClick={() => setFilter(tag)}
           >
@@ -79,7 +79,7 @@ const Projects = ({ showViewAllButton = true }: ProjectsProps) => {
             } transition-all duration-500`}
             style={{ transitionDelay: `${index * 70}ms` }}
           >
-            <div className="overflow-hidden rounded-lg border border-white/5 bg-slate-900/50">
+            <div className="overflow-hidden rounded-lg border border-black/5 dark:border-white/5 bg-slate-900/50">
               <img
                 src={project.image}
                 alt={project.title}
@@ -89,18 +89,18 @@ const Projects = ({ showViewAllButton = true }: ProjectsProps) => {
 
             <div className="min-w-0">
               <div className="flex flex-wrap items-start justify-between gap-3">
-                <h3 className="text-base font-semibold text-slate-200 group-hover:text-emerald-300 transition-colors duration-200">
+                <h3 className="text-base font-semibold text-slate-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-colors duration-200">
                   {project.liveLink ? (
                     <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 group/link">
                       <span>{project.title}</span>
-                      <span className="inline-block transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 text-xs text-slate-400 group-hover:text-emerald-300">
+                      <span className="inline-block transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 text-xs text-slate-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-300">
                         ↗
                       </span>
                     </a>
                   ) : project.githubLink ? (
                     <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 group/link">
                       <span>{project.title}</span>
-                      <span className="inline-block transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 text-xs text-slate-400 group-hover:text-emerald-300">
+                      <span className="inline-block transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 text-xs text-slate-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-300">
                         ↗
                       </span>
                     </a>
@@ -110,12 +110,12 @@ const Projects = ({ showViewAllButton = true }: ProjectsProps) => {
                 </h3>
                 <div className="flex items-center gap-1 text-slate-400">
                   {project.githubLink && (
-                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer" aria-label="GitHub repository" className="rounded-md p-1.5 transition hover:text-emerald-300 hover:bg-white/5">
+                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer" aria-label="GitHub repository" className="rounded-md p-1.5 transition hover:text-emerald-600 dark:hover:text-emerald-300 hover:bg-black/5 dark:hover:bg-white/5">
                       <Github className="h-4 w-4" />
                     </a>
                   )}
                   {project.liveLink && (
-                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer" aria-label="Live preview" className="rounded-md p-1.5 transition hover:text-emerald-300 hover:bg-white/5">
+                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer" aria-label="Live preview" className="rounded-md p-1.5 transition hover:text-emerald-600 dark:hover:text-emerald-300 hover:bg-black/5 dark:hover:bg-white/5">
                       <ExternalLink className="h-4 w-4" />
                     </a>
                   )}
@@ -126,7 +126,7 @@ const Projects = ({ showViewAllButton = true }: ProjectsProps) => {
 
               <div className="mt-4 flex flex-wrap gap-1.5">
                 {project.tags.map((tag) => (
-                  <span key={tag} className="rounded-full bg-emerald-400/10 px-2.5 py-0.5 font-mono text-[10px] font-medium leading-normal text-emerald-300">
+                  <span key={tag} className="rounded-full bg-emerald-600/10 dark:bg-emerald-400/10 px-2.5 py-0.5 font-mono text-[10px] font-medium leading-normal text-emerald-700 dark:text-emerald-300">
                     {tag}
                   </span>
                 ))}

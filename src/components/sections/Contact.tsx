@@ -60,7 +60,7 @@ const Contact = () => {
 
           <div className="surface-panel p-4">
             <div className="flex items-start gap-3">
-              <MapPin className="mt-0.5 h-4 w-4 text-emerald-200" />
+              <MapPin className="mt-0.5 h-4 w-4 text-emerald-600 dark:text-emerald-200" />
               <div>
                 <p className="text-sm font-medium text-slate-200">Location</p>
                 <p className="mt-1 text-sm text-slate-400">APAC</p>
@@ -70,7 +70,7 @@ const Contact = () => {
 
           <div className="surface-panel p-4">
             <div className="flex items-start gap-3">
-              <Mail className="mt-0.5 h-4 w-4 text-emerald-200" />
+              <Mail className="mt-0.5 h-4 w-4 text-emerald-600 dark:text-emerald-200" />
               <div>
                 <p className="text-sm font-medium text-slate-200">Email</p>
                 <p className="mt-1 break-all text-sm text-slate-400">hello@peacechan.dev</p>
@@ -80,7 +80,7 @@ const Contact = () => {
 
           <div className="surface-panel p-4">
             <div className="flex items-start gap-3">
-              <Phone className="mt-0.5 h-4 w-4 text-emerald-200" />
+              <Phone className="mt-0.5 h-4 w-4 text-emerald-600 dark:text-emerald-200" />
               <div>
                 <p className="text-sm font-medium text-slate-200">Phone</p>
                 <p className="mt-1 text-sm text-slate-400">+65 94219072</p>
@@ -154,7 +154,7 @@ const Contact = () => {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="inline-flex h-11 items-center gap-2 rounded-md border border-emerald-300/30 bg-emerald-300/10 px-5 text-emerald-100 hover:bg-emerald-300/15"
+              className="accent-button inline-flex h-11 items-center gap-2 px-5 hover:translate-y-0"
             >
               {isSubmitting ? 'Opening...' : 'Send Message'}
               <Send className="h-4 w-4" />

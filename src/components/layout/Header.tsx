@@ -80,8 +80,8 @@ const Header = () => {
             onClick={() => handleNavigation(id)}
             className={`rounded-md px-3 py-2 text-sm transition ${
               active
-                ? 'border border-emerald-300/25 bg-emerald-300/10 text-emerald-200'
-                : 'text-slate-300 hover:bg-white/5 hover:text-slate-100'
+                ? 'border border-emerald-600/25 dark:border-emerald-300/25 bg-emerald-600/10 dark:bg-emerald-300/10 text-emerald-700 dark:text-emerald-200'
+                : 'text-slate-600 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/5 hover:text-slate-800 dark:hover:text-slate-100'
             }`}
           >
             {label}
@@ -93,8 +93,8 @@ const Header = () => {
             onClick={() => setIsOpen(false)}
             className={`rounded-md px-3 py-2 text-sm transition ${
               active
-                ? 'border border-emerald-300/25 bg-emerald-300/10 text-emerald-200'
-                : 'text-slate-300 hover:bg-white/5 hover:text-slate-100'
+                ? 'border border-emerald-600/25 dark:border-emerald-300/25 bg-emerald-600/10 dark:bg-emerald-300/10 text-emerald-700 dark:text-emerald-200'
+                : 'text-slate-600 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/5 hover:text-slate-800 dark:hover:text-slate-100'
             }`}
           >
             {label}
@@ -112,12 +112,12 @@ const Header = () => {
             <div>
               <Link to="/" className="inline-flex items-center gap-3 text-slate-100">
                 <img src="/logo.svg" alt="Peace Chan logo" className="h-10 w-10 rounded-md border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 p-1.5" />
-                <span className="font-semibold tracking-tight text-slate-800 dark:text-slate-100">Peace Chan</span>
+                <span className="font-semibold tracking-tight text-slate-100">Peace Chan</span>
               </Link>
 
               <div className="mt-10 space-y-4">
                 <p className="font-mono text-sm text-emerald-600 dark:text-emerald-300">Hi, my name is</p>
-                <h1 className="text-3xl font-semibold leading-tight text-slate-800 dark:text-slate-100">Aye Chan Htun Naing</h1>
+                <h1 className="text-3xl font-semibold leading-tight text-slate-100">Aye Chan Htun Naing</h1>
                 <h2 className="text-2xl font-semibold leading-tight text-slate-500 dark:text-slate-400">
                   I build reliable software systems.
                 </h2>
@@ -156,7 +156,7 @@ const Header = () => {
           <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
             <Link to="/" className="inline-flex items-center gap-2 text-sm font-semibold text-slate-100">
               <img src="/logo.svg" alt="Peace Chan logo" className="h-8 w-8 rounded-md border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 p-1" />
-              <span className="text-slate-800 dark:text-slate-100">Peace Chan</span>
+              <span className="text-slate-100">Peace Chan</span>
             </Link>
             <div className="flex items-center gap-2">
               <ThemeToggle />
@@ -188,7 +188,7 @@ const Header = () => {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link to="/" className="inline-flex items-center gap-2 text-sm font-semibold text-slate-100">
           <img src="/logo.svg" alt="Peace Chan logo" className="h-8 w-8 rounded-md border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 p-1" />
-          <span className="text-slate-800 dark:text-slate-100">Peace Chan</span>
+          <span className="text-slate-100">Peace Chan</span>
         </Link>
 
         <div className="flex items-center gap-3">

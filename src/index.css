@@ -186,7 +186,7 @@
   }
 
   .ghost-button {
-    @apply inline-flex items-center justify-center rounded-md border border-black/10 dark:border-white/10 bg-transparent px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 transition hover:-translate-y-0.5 hover:border-black/20 dark:hover:border-white/25 hover:text-slate-800 dark:hover:text-slate-100;
+    @apply inline-flex items-center justify-center rounded-md border border-black/10 dark:border-white/10 bg-transparent px-4 py-2 text-sm font-medium text-slate-300 transition hover:-translate-y-0.5 hover:border-black/20 dark:hover:border-white/25 hover:text-slate-100;
   }
 
   .text-link-accent {
@@ -208,7 +208,7 @@
   }
 
   .nav-link-line.active {
-    @apply text-slate-900 dark:text-slate-100;
+    @apply text-slate-100;
   }
 
   .list-hover-card {

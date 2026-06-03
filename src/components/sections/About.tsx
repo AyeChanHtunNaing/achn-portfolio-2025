@@ -50,27 +50,27 @@ const About = () => {
           </p>
 
           <div className="pt-2">
-            <p className="font-mono text-xs uppercase tracking-wider text-emerald-300 mb-3">
+            <p className="font-mono text-xs uppercase tracking-wider text-emerald-600 dark:text-emerald-300 mb-3">
               // Technologies I work with
             </p>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2 font-mono text-[12px] text-slate-400">
               <li className="flex items-center gap-2">
-                <span className="text-emerald-300">▹</span> Java (Spring Boot)
+                <span className="text-emerald-600 dark:text-emerald-300">▹</span> Java (Spring Boot)
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-emerald-300">▹</span> Python (TensorFlow / OpenCV)
+                <span className="text-emerald-600 dark:text-emerald-300">▹</span> Python (TensorFlow / OpenCV)
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-emerald-300">▹</span> JavaScript / TypeScript
+                <span className="text-emerald-600 dark:text-emerald-300">▹</span> JavaScript / TypeScript
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-emerald-300">▹</span> React JS / Vue JS
+                <span className="text-emerald-600 dark:text-emerald-300">▹</span> React JS / Vue JS
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-emerald-300">▹</span> Docker / DevOps
+                <span className="text-emerald-600 dark:text-emerald-300">▹</span> Docker / DevOps
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-emerald-300">▹</span> AWS Cloud Services
+                <span className="text-emerald-600 dark:text-emerald-300">▹</span> AWS Cloud Services
               </li>
             </ul>
           </div>
@@ -125,11 +125,11 @@ const About = () => {
             <div className="mb-6 pt-1 pr-3 pb-3">
               <div className="group relative mx-auto w-full max-w-[200px] sm:max-w-[220px] lg:max-w-full">
                 {/* The behind outline frame */}
-                <div className="absolute inset-0 rounded-2xl border-2 border-emerald-300 translate-x-3 translate-y-3 transition-transform duration-300 group-hover:translate-x-1.5 group-hover:translate-y-1.5" />
+                <div className="absolute inset-0 rounded-2xl border-2 border-emerald-600 dark:border-emerald-300 translate-x-3 translate-y-3 transition-transform duration-300 group-hover:translate-x-1.5 group-hover:translate-y-1.5" />
                 
                 {/* The main picture wrapper */}
                 <div className="relative overflow-hidden rounded-2xl transition-transform duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1">
-                  <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-white/5 bg-slate-900/70">
+                  <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-black/5 dark:border-white/5 bg-slate-800/70 dark:bg-slate-900/70">
                     <img
                       src="/avatars/avatar-cartoon.png"
                       alt="Profile"

@@ -10,7 +10,7 @@ const HomeHero = ({ isLoaded }: HomeHeroProps) => {
           isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
         }`}
       >
-        <p className="font-mono text-sm text-emerald-300">Hi, I&apos;m Peace Chan.</p>
+        <p className="font-mono text-sm text-emerald-600 dark:text-emerald-300">Hi, I&apos;m Peace Chan.</p>
         <h2 className="max-w-3xl text-3xl font-semibold leading-tight text-slate-100 sm:text-4xl md:text-5xl">
           I build production-ready software that stays maintainable after launch.
         </h2>

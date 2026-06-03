@@ -21,7 +21,7 @@ const ResumeItem = ({
   
   return (
     <div className="relative mb-4 last:mb-0">
-      <div className="group flex flex-col gap-2 rounded-xl border border-transparent p-4 transition-all duration-300 md:hover:border-white/5 md:hover:bg-slate-800/30 md:hover:shadow-lg md:flex-row md:items-start md:gap-8">
+      <div className="group flex flex-col gap-2 rounded-xl border border-transparent p-4 transition-all duration-300 md:hover:border-black/5 dark:md:hover:border-white/5 md:hover:bg-black/[0.02] dark:md:hover:bg-slate-800/30 md:hover:shadow-lg md:flex-row md:items-start md:gap-8">
         <div className="md:w-1/4 pt-1">
           <span className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-500">
             {period}
@@ -29,10 +29,10 @@ const ResumeItem = ({
         </div>
         
         <div className="md:w-3/4">
-          <h3 className="text-base font-semibold text-slate-200 group-hover:text-emerald-300 transition-colors duration-200 break-words">
+          <h3 className="text-base font-semibold text-slate-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-colors duration-200 break-words">
             {title}{" "}
             <span className="text-slate-500 font-normal">·</span>{" "}
-            <span className="text-slate-300 group-hover:text-emerald-200 transition-colors duration-200">
+            <span className="text-slate-300 group-hover:text-emerald-600 dark:group-hover:text-emerald-200 transition-colors duration-200">
               {organization}
             </span>
           </h3>
@@ -65,10 +65,10 @@ const SkillCategory = ({
   icon: React.ReactNode;
 }) => {
   return (
-    <Card className="border border-white/5 bg-slate-900/40 overflow-hidden rounded-xl transition-all duration-300 hover:border-emerald-300/10 hover:bg-slate-900/60 shadow-md">
+    <Card className="border border-black/5 dark:border-white/5 bg-slate-800/40 dark:bg-slate-900/40 overflow-hidden rounded-xl transition-all duration-300 hover:border-emerald-600/20 dark:hover:border-emerald-300/10 hover:bg-slate-800/60 dark:hover:bg-slate-900/60 shadow-md">
       <CardContent className="p-5">
         <div className="flex items-center gap-3 mb-4">
-          <div className="rounded-lg bg-white/5 p-2 text-slate-400">
+          <div className="rounded-lg bg-black/5 dark:bg-white/5 p-2 text-slate-500 dark:text-slate-400">
             {icon}
           </div>
           <h4 className="text-[15px] font-semibold text-slate-200">{title}</h4>
@@ -77,7 +77,7 @@ const SkillCategory = ({
           {skills.map((skill, index) => (
             <span 
               key={index} 
-              className="rounded-full bg-emerald-400/10 px-2.5 py-1 text-[11px] font-mono font-medium text-emerald-300"
+              className="rounded-full bg-emerald-600/10 dark:bg-emerald-400/10 px-2.5 py-1 text-[11px] font-mono font-medium text-emerald-700 dark:text-emerald-300"
             >
               {skill}
             </span>
@@ -266,7 +266,7 @@ const Resume = () => {
                 <Award className="w-6 h-6" /> 
                 Work Experience
               </CollapsibleTrigger>
-              <div className="flex-1 self-center border-t border-white/10"></div>
+              <div className="flex-1 self-center border-t border-black/10 dark:border-white/10"></div>
             </div>
             
             <CollapsibleContent className="animate-accordion-down">
@@ -293,7 +293,7 @@ const Resume = () => {
                 <GraduationCap className="w-6 h-6" />
                 Education
               </h3>
-              <div className="flex-1 self-center border-t border-white/10"></div>
+              <div className="flex-1 self-center border-t border-black/10 dark:border-white/10"></div>
             </div>
             
             <div>
@@ -319,7 +319,7 @@ const Resume = () => {
               <Star className="w-6 h-6" />
               Skills
             </h3>
-            <div className="flex-1 self-center border-t border-white/10"></div>
+            <div className="flex-1 self-center border-t border-black/10 dark:border-white/10"></div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
