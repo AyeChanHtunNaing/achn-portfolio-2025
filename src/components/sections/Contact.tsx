@@ -102,7 +102,7 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="h-11 border-white/10 bg-white/5 text-slate-100 placeholder:text-slate-500 focus-visible:ring-emerald-300/30"
+                  className="h-11 border-black/10 dark:border-white/10 bg-black/[0.01] dark:bg-white/5 text-slate-800 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus-visible:ring-emerald-300/30"
                   required
                 />
               </div>
@@ -116,7 +116,7 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="h-11 border-white/10 bg-white/5 text-slate-100 placeholder:text-slate-500 focus-visible:ring-emerald-300/30"
+                  className="h-11 border-black/10 dark:border-white/10 bg-black/[0.01] dark:bg-white/5 text-slate-800 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus-visible:ring-emerald-300/30"
                   required
                 />
               </div>
@@ -132,7 +132,7 @@ const Contact = () => {
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
-                className="h-11 border-white/10 bg-white/5 text-slate-100 placeholder:text-slate-500 focus-visible:ring-emerald-300/30"
+                className="h-11 border-black/10 dark:border-white/10 bg-black/[0.01] dark:bg-white/5 text-slate-800 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus-visible:ring-emerald-300/30"
                 required
               />
             </div>
@@ -146,7 +146,7 @@ const Contact = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="min-h-[150px] border-white/10 bg-white/5 text-slate-100 placeholder:text-slate-500 focus-visible:ring-emerald-300/30"
+                className="min-h-[150px] border-black/10 dark:border-white/10 bg-black/[0.01] dark:bg-white/5 text-slate-800 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus-visible:ring-emerald-300/30"
                 required
               />
             </div>

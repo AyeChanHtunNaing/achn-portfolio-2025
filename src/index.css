@@ -6,6 +6,51 @@
 
 @layer base {
   :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 160 84% 39%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 160 84% 39%;
+
+    --radius: 0.75rem;
+
+    /* Slate variables for light mode (inverted mapping) */
+    --slate-50: #0f172a;
+    --slate-100: #0f172a;
+    --slate-200: #1e293b;
+    --slate-300: #334155;
+    --slate-400: #475569;
+    --slate-500: #64748b;
+    --slate-600: #cbd5e1;
+    --slate-700: #e2e8f0;
+    --slate-800: #f1f5f9;
+    --slate-900: #f8fafc;
+    --slate-950: #ffffff;
+  }
+
+  .dark {
     --background: 222 47% 11%;
     --foreground: 214 32% 91%;
 
@@ -34,7 +79,18 @@
     --input: 220 24% 22%;
     --ring: 159 74% 63%;
 
-    --radius: 0.75rem;
+    /* Slate variables for dark mode (standard mapping) */
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-300: #cbd5e1;
+    --slate-400: #94a3b8;
+    --slate-500: #64748b;
+    --slate-600: #475569;
+    --slate-700: #334155;
+    --slate-800: #1e293b;
+    --slate-900: #0f172a;
+    --slate-950: #020617;
   }
 
   * {
@@ -50,10 +106,18 @@
     font-family: 'Inter', sans-serif;
     text-rendering: optimizeLegibility;
     background-image:
+      radial-gradient(circle at 15% 10%, rgba(20, 184, 166, 0.03), transparent 34%),
+      radial-gradient(circle at 90% 12%, rgba(59, 130, 246, 0.03), transparent 34%),
+      linear-gradient(180deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+    background-attachment: fixed;
+    transition: background-color 0.3s ease, background-image 0.3s ease, color 0.3s ease;
+  }
+
+  .dark body {
+    background-image:
       radial-gradient(circle at 15% 10%, rgba(45, 212, 191, 0.05), transparent 34%),
       radial-gradient(circle at 90% 12%, rgba(96, 165, 250, 0.05), transparent 34%),
       linear-gradient(180deg, #0a192f 0%, #091427 50%, #08111f 100%);
-    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -64,6 +128,10 @@
   ::selection {
     background: rgba(100, 255, 218, 0.22);
     color: #e6f1ff;
+  }
+
+  header, aside, .surface-panel, .surface-panel-strong, .list-hover-card, input, textarea, button, a {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   }
 }
 
@@ -85,61 +153,66 @@
   }
 
   .section-eyebrow {
-    @apply font-mono text-xs uppercase tracking-[0.18em] text-emerald-300;
+    @apply font-mono text-xs uppercase tracking-[0.18em] text-emerald-600 dark:text-emerald-300;
   }
 
   .section-rule {
-    @apply h-px flex-1 bg-white/10;
+    @apply h-px flex-1 bg-black/10 dark:bg-white/10;
   }
 
   .surface-panel {
-    @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm;
+    @apply rounded-2xl border border-black/5 dark:border-white/10 bg-black/[0.01] dark:bg-white/5 backdrop-blur-sm;
   }
 
   .surface-panel-strong {
-    @apply rounded-2xl border border-white/10 bg-slate-900/50 shadow-[0_20px_60px_-30px_rgba(2,12,27,0.8)];
+    @apply rounded-2xl border border-black/10 dark:border-white/10 shadow-[0_20px_60px_-30px_rgba(2,12,27,0.05)] dark:shadow-[0_20px_60px_-30px_rgba(2,12,27,0.8)] backdrop-blur-md;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .dark .surface-panel-strong {
+    background-color: rgba(15, 23, 42, 0.5);
   }
 
   .soft-tag {
-    @apply rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300;
+    @apply rounded-full border border-black/5 dark:border-white/10 bg-black/[0.01] dark:bg-white/5 px-3 py-1 text-xs text-slate-500 dark:text-slate-300;
   }
 
   .accent-pill {
-    @apply inline-flex items-center rounded-full border border-emerald-300/25 bg-emerald-300/10 px-3 py-1 text-xs font-medium text-emerald-200;
+    @apply inline-flex items-center rounded-full border border-emerald-600/15 dark:border-emerald-300/25 bg-emerald-600/5 dark:bg-emerald-300/10 px-3 py-1 text-xs font-medium text-emerald-700 dark:text-emerald-200;
   }
 
   .accent-button {
-    @apply inline-flex items-center justify-center rounded-md border border-emerald-300/30 bg-emerald-300/10 px-4 py-2 text-sm font-medium text-emerald-200 transition hover:-translate-y-0.5 hover:bg-emerald-300/15 hover:text-emerald-100;
+    @apply inline-flex items-center justify-center rounded-md border border-emerald-600/25 dark:border-emerald-300/30 bg-emerald-600/10 dark:bg-emerald-300/10 px-4 py-2 text-sm font-medium text-emerald-700 dark:text-emerald-200 transition hover:-translate-y-0.5 hover:bg-emerald-600/15 dark:hover:bg-emerald-300/15 hover:text-emerald-800 dark:hover:text-emerald-100;
   }
 
   .ghost-button {
-    @apply inline-flex items-center justify-center rounded-md border border-white/10 bg-transparent px-4 py-2 text-sm font-medium text-slate-300 transition hover:-translate-y-0.5 hover:border-white/25 hover:text-slate-100;
+    @apply inline-flex items-center justify-center rounded-md border border-black/10 dark:border-white/10 bg-transparent px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 transition hover:-translate-y-0.5 hover:border-black/20 dark:hover:border-white/25 hover:text-slate-800 dark:hover:text-slate-100;
   }
 
   .text-link-accent {
-    @apply text-emerald-200 underline decoration-emerald-300/40 underline-offset-4 transition hover:text-emerald-100 hover:decoration-emerald-300;
+    @apply text-emerald-600 dark:text-emerald-200 underline decoration-emerald-600/30 dark:decoration-emerald-300/40 underline-offset-4 transition hover:text-emerald-700 dark:hover:text-emerald-100 hover:decoration-emerald-500 dark:hover:decoration-emerald-300;
   }
 
   .nav-link-line {
-    @apply inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.16em] text-slate-500 transition hover:text-slate-200;
+    @apply inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.16em] text-slate-500 transition hover:text-slate-800 dark:hover:text-slate-200;
   }
 
   .nav-link-line::before {
     content: '';
-    @apply h-px w-8 bg-slate-600 transition-all duration-200;
+    @apply h-px w-8 bg-slate-300 dark:bg-slate-600 transition-all duration-200;
   }
 
   .nav-link-line:hover::before,
   .nav-link-line.active::before {
-    @apply w-16 bg-emerald-300;
+    @apply w-16 bg-emerald-600 dark:bg-emerald-300;
   }
 
   .nav-link-line.active {
-    @apply text-slate-100;
+    @apply text-slate-900 dark:text-slate-100;
   }
 
   .list-hover-card {
-    @apply rounded-xl border border-transparent p-4 transition md:hover:border-white/10 md:hover:bg-white/5;
+    @apply rounded-xl border border-transparent p-4 transition md:hover:border-black/5 dark:md:hover:border-white/10 md:hover:bg-black/[0.01] dark:md:hover:bg-white/5;
   }
 
   /* Compatibility aliases for existing components still using old class names */
@@ -154,16 +227,16 @@
   }
 
   .glass-accent {
-    @apply border border-emerald-300/30 bg-emerald-300/10 text-emerald-100;
+    @apply border border-emerald-600/20 dark:border-emerald-300/30 bg-emerald-600/5 dark:bg-emerald-300/10 text-emerald-700 dark:text-emerald-100;
   }
 
   .glass-accent-soft,
   .pastel-chip {
-    @apply border border-white/10 bg-white/5 text-slate-300;
+    @apply border border-black/5 dark:border-white/10 bg-black/[0.01] dark:bg-white/5 text-slate-600 dark:text-slate-300;
   }
 
   .glass-input {
-    @apply border-white/10 bg-white/5 text-slate-100 placeholder:text-slate-500;
+    @apply border-black/10 dark:border-white/10 bg-black/[0.01] dark:bg-white/5 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500;
   }
 
   .glass-sheen::after {
