@@ -1,5 +1,5 @@
 [[redirects]]
-from = "https://baby.khinemyaezin.com/*"
+from = "https://babe.khinemyaezin.com/*"
 to = "https://www.peacechan.dev/:splat"
 status = 301
 force = true
